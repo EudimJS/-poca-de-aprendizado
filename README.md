@@ -1,35 +1,53 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maior valor</title>
-    <style>@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
-
-        body { font: 12pt Arial; background-image: url(https://sm.ign.com/ign_br/screenshot/default/naruto-shippuden_f134.png);}
-        h1, h2, h3 { font-family: 'Pacifico', cursive; font-weight: normal;}
-        button { font-size: 12pt; padding: 30px; }</style>
+    <title>Tentando criar pagina2</title>
+    <style>
+        body {
+            background-image: url(https://cupulatrovao.com.br/wp-content/uploads/2020/11/capa-guia-de-episodios-filler-naruto-classico.jpg);
+            color: white;
+            font: normal 20pt Arial;
+            
+        }
+        h1 {
+            color: rgb(15, 15, 14);
+        }
+        p {
+            color: rgb(8, 9, 10);
+        }
+        input{
+            width: 60px;
+        }
+      
+    </style>
 </head>
 <body>
-    <h1>Maior valor</h1>
-    <button onclick="maior()">Clique para começar</button>
-    <div id='saida'>
-        <br>
-        O resultado vai aparecer aqui...
-    </div>
-
+   
+    <h1>Soma de valores</h1>
+    <input type="number" name="nn1" id="nn1">+
+    <input type="number" name="nn2" id="nn2">
+    <input type="button" value="Somar" onclick="somar()">
+    <div id="res"></div>
+    <input type="button" value="Próximo" onclick="page2()">
+    <p></p>
+    <iframe width="500" height="400" src="https://www.youtube.com/embed/RFbt_VfaSdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <script>
-       function maior(){
-            let n1 = Number(window.prompt('Digite um número: '))
-            let n2 = Number(window.prompt('Digite outro número: '))
+      function somar()
+      {
+          var n1 = document.querySelector('input#nn1')
+          var n2 = document.querySelector('input#nn2')
+          var s1 = Number(n1.value)
+          var s2 = Number(n2.value)
+          var som = (s1+s2)
+          var x = document.getElementById('res')
+          x.innerHTML = `O resultado da soma entre ${s1} e ${s2} é ${som}`
+      }
+      function page2()
+      {
 
-            let res = document.getElementById('saida')
-            if (n1 > n2) {
-                res.innerHTML = `<p>Analisando os valores <mark>${n1}</mark> e <mark>${n2}</mark>, o maior valor é <strong>${n1}</strong></p>`
-            } else if (n1 < n2) {
-                res.innerHTML = `<p>Analisando os valores <mark>${n1}</mark> e <mark>${n2}</mark>, o maior valor é <strong>${n2}</strong></p>`
-            } else {
-                res.innerHTML = `<p>Analisando os valores <mark>${n1}</mark> e <mark>${n2}</mark>, ambos são <strong>IGUAIS</strong></p>`
-            }}
+      }
     </script>
 </body>
 </html>
